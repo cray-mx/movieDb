@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,62 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media only screen and (max-width: 480px) {
+  /*  Phones */
+  .search-box:focus {
+    box-shadow: none !important;
+    width: 18rem !important;
+    font-size: 1.4rem !important;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  /*  Laptops/Desktops */
+  .search-box:focus {
+    box-shadow: none !important;
+    width: 30rem !important;
+    font-size: 1.5rem !important;
+  }
+}
+.search-box {
+  width: 18rem !important;
+  font-size: 1.4rem !important;
+}
+
+.navbar {
+  height: 5rem !important;
+}
+
+.card {
+  width: 14rem !important;
+  height: 26rem;
+  background-color: rgb(234, 238, 238) !important;
+  margin-bottom: 2rem !important;
+  padding: 4px;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-color: rgba(203, 209, 209, 0.5) !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+a:hover {
+  color: rgb(116, 116, 116) !important;
+}
+
+.images {
+  background-color: #282c34 !important;
+}
+
+.poster-image {
+  width: 100% !important;
+  height: 18vw !important;
+  object-fit: cover;
 }
