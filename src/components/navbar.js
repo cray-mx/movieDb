@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import axios from "axios";
-import { Navbar, Form, Container, Row, Col, Card } from "react-bootstrap";
+import { Navbar, Form, Container, Row, Col } from "react-bootstrap";
 
 const NavBar = ({ setData }) => {
   const searchRef = useRef();
@@ -18,6 +18,7 @@ const NavBar = ({ setData }) => {
           },
         };
         const res = await axios.get(API, config);
+        console.log(res.data);
         setData([...res.data.Search]);
       } catch (err) {
         console.log(err);
@@ -28,6 +29,9 @@ const NavBar = ({ setData }) => {
     <Container fluid className="p-0">
       <Navbar className="bg-dark justify-content-center">
         <Row>
+          <Col>
+            <h1 style={{ color: "#66c2ff" }}>MovieDb</h1>
+          </Col>
           <Col>
             <Form>
               <Form.Control

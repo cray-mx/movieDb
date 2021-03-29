@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=New+Tegomin&display=swap");
+
 .App {
   text-align: center;
 }
@@ -71,7 +73,7 @@
 .card {
   width: 14rem !important;
   height: 26rem;
-  background-color: rgb(234, 238, 238) !important;
+  background-color: rgb(148, 135, 116) !important;
   margin-bottom: 2rem !important;
   padding: 4px;
 }
@@ -98,4 +100,60 @@ a:hover {
   width: 100% !important;
   height: 18vw !important;
   object-fit: cover;
+}
+
+.container-movies {
+  display: flex;
+  padding: 30px;
+  justify-content: space-evenly;
+  background-color: #9fa1a5;
+  height: 100vh;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 -5px;
+}
+
+.inner-container h1 {
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+
+.inner-container p {
+  font-size: 1.4rem;
+}
+
+.flex-item {
+  margin: 0 10px;
+}
+
+.ratings {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rating-item {
+  margin: 0 20px;
+}
+
+.imdb {
+  color: gold;
+}
+
+.rt {
+  color: rgb(167, 60, 41);
+}
+
+.time {
+  color: green;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
