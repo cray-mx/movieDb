@@ -7,7 +7,7 @@ const NavBar = () => {
   const [search, setSearch, data, setData] = useContext(SearchContext);
   const onEnter = (e) => {
     if (e.key === "Enter") {
-      console.log(e.target.value);
+      setSearch(e.target.value);
     }
   };
 
@@ -19,12 +19,7 @@ const NavBar = () => {
         </p>
         <img src={popcorn} alt="Popcorn" />
       </div>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        onKeyDown={(e) => onEnter(e)}
-      />
+      <input type="text" onKeyDown={(e) => onEnter(e)} />
     </div>
   );
 };

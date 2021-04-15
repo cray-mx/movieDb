@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MovieCard from "./movieCard";
 import axios from "axios";
@@ -9,31 +9,37 @@ const MovieList = () => {
   const API_KEY = "98d3e36d";
 
   const [search, setSearch, data, setData] = useContext(SearchContext);
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
-    const response = await axios.get(API, {
-      params: {
-        apikey: API_KEY,
-        s: search,
-      },
-    });
-    console.log(response);
-    setData(response.data.Search);
+    if (search.length > 0) {
+      const response = await axios.get(API, {
+        params: {
+          apikey: API_KEY,
+          s: search,
+        },
+      });
+      setData(response.data.Search);
+    }
+    setLoading(false);
   };
 
   useEffect(async () => {
     getData();
+    console.log("Hello");
+    console.log(search);
     console.log(data);
+    return () => console.log("Refresh");
   }, [search]);
 
   return (
     <Fragment>
       <div className="movies">
-        {/* {data.length > 0 ? (
+        {!loading ? (
           data.map((movie) => <MovieCard data={movie} />)
         ) : (
           <h2>Loading...</h2>
-        )} */}
+        )}
       </div>
     </Fragment>
   );
