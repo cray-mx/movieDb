@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
 
 const Detailed = ({ match }) => {

@@ -1,7 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   font-family: Syne;
+}
+
+$navbar-color: rgb(209, 217, 224);
+$title-color: crimson;
+$title-span: rgb(138, 43, 226);
+$movie-list: rgb(240, 248, 255);
+
+body {
+  background-color: $movie-list;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $navbar-color;
+  padding: 1em 0;
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    p {
+      font-size: 1.7em;
+      color: $title-color;
+      span {
+        color: $title-span;
+      }
+    }
+
+    img {
+      height: 25px;
+      width: 25px;
+      margin-left: 1em;
+    }
+  }
+
+  input {
+    width: 80vw;
+    outline: none;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    border-radius: 1em;
+    border: none;
+  }
+}
+
+.movies {
+  background-color: $movie-list;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2em 0;
+}
+
+.card {
+  display: inline-block;
+  height: 60vh;
+  width: 80%;
+  display: flex;
+  background-color: $navbar-color;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em 1em 0 0;
+
+  img {
+    width: 100%;
+    height: 90%;
+    border-radius: 1em 1em 0 0;
+  }
+
+  .inner-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    .title {
+      margin: 0 1em;
+      font-size: 1.2em;
+    }
+    .rating {
+      margin-right: 1em;
+      font-family: Poppins;
+      font-weight: 600;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(227, 230, 233);
+    }
+  }
 }
